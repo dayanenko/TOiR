@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Система ТОиР — MVP</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand__logo">ТОиР</span>
+          <span class="brand__name">Водоканал</span>
+        </div>
+        <nav class="nav">
+          <a class="nav__link nav__link--active" href="#equipment">Реестр оборудования</a>
+          <a class="nav__link" href="#maintenance">Плановое ТО</a>
+          <a class="nav__link" href="#incidents">Аварийные работы</a>
+          <a class="nav__link" href="#analytics">Контроль выполнения</a>
+        </nav>
+        <div class="sidebar__footer">
+          <p>МVP без авторизации и интеграций</p>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <h1>Система ТОиР для водоканалов</h1>
+            <p>Учет оборудования, планирование ТО и фиксация аварийных работ.</p>
+          </div>
+          <div class="topbar__actions">
+            <button class="button button--secondary">Экспорт</button>
+            <button class="button">Создать заявку</button>
+          </div>
+        </header>
+
+        <section class="grid">
+          <article class="card">
+            <h2>Оборудование</h2>
+            <p class="metric">128</p>
+            <span class="metric__caption">объектов на учете</span>
+          </article>
+          <article class="card">
+            <h2>ТО на месяц</h2>
+            <p class="metric">24</p>
+            <span class="metric__caption">работ в графике</span>
+          </article>
+          <article class="card">
+            <h2>Выполнено</h2>
+            <p class="metric">86%</p>
+            <span class="metric__caption">плановых работ</span>
+          </article>
+          <article class="card">
+            <h2>Аварии</h2>
+            <p class="metric">3</p>
+            <span class="metric__caption">в текущем месяце</span>
+          </article>
+        </section>
+
+        <section id="equipment" class="section">
+          <div class="section__header">
+            <div>
+              <h2>Реестр оборудования</h2>
+              <p>Добавляйте, редактируйте и отслеживайте состояние ключевых узлов.</p>
+            </div>
+            <button class="button">Добавить оборудование</button>
+          </div>
+          <div class="table">
+            <div class="table__row table__row--head">
+              <span>Наименование</span>
+              <span>Тип</span>
+              <span>Местоположение</span>
+              <span>Инв. номер</span>
+              <span>Статус</span>
+            </div>
+            <div class="table__row">
+              <span>Насос НП-250</span>
+              <span>Насосное оборудование</span>
+              <span>ПНС №2</span>
+              <span>INV-00452</span>
+              <span class="status status--ok">В работе</span>
+            </div>
+            <div class="table__row">
+              <span>Фильтр ФР-18</span>
+              <span>Фильтрация</span>
+              <span>Очистные сооружения</span>
+              <span>INV-00611</span>
+              <span class="status status--warning">ТО в плане</span>
+            </div>
+            <div class="table__row">
+              <span>Задвижка DN300</span>
+              <span>Арматура</span>
+              <span>Камера 12</span>
+              <span>INV-00729</span>
+              <span class="status status--alert">Аварийно</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="maintenance" class="section">
+          <div class="section__header">
+            <div>
+              <h2>Плановое техническое обслуживание</h2>
+              <p>Периодичность, привязка к оборудованию и факт выполнения.</p>
+            </div>
+            <button class="button button--secondary">Создать работу ТО</button>
+          </div>
+
+          <div class="maintenance">
+            <article class="card card--wide">
+              <div class="card__header">
+                <h3>ТО-12: Осмотр насоса</h3>
+                <span class="status status--ok">Запланировано</span>
+              </div>
+              <div class="card__content">
+                <div>
+                  <p class="label">Оборудование</p>
+                  <p>Насос НП-250</p>
+                </div>
+                <div>
+                  <p class="label">Периодичность</p>
+                  <p>Ежемесячно</p>
+                </div>
+                <div>
+                  <p class="label">План / факт</p>
+                  <p>15.10.2024 / —</p>
+                </div>
+                <div>
+                  <p class="label">Комментарий</p>
+                  <p>Проверить вибрацию, заменить масло.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="card card--wide">
+              <div class="card__header">
+                <h3>ТО-24: Промывка фильтра</h3>
+                <span class="status status--warning">В работе</span>
+              </div>
+              <div class="card__content">
+                <div>
+                  <p class="label">Оборудование</p>
+                  <p>Фильтр ФР-18</p>
+                </div>
+                <div>
+                  <p class="label">Периодичность</p>
+                  <p>Раз в квартал</p>
+                </div>
+                <div>
+                  <p class="label">План / факт</p>
+                  <p>09.10.2024 / 10.10.2024</p>
+                </div>
+                <div>
+                  <p class="label">Комментарий</p>
+                  <p>Задействованы 2 смены, требуется контроль давления.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="incidents" class="section">
+          <div class="section__header">
+            <div>
+              <h2>Аварийные работы</h2>
+              <p>Фиксация инцидентов, анализ причин и статус устранения.</p>
+            </div>
+            <button class="button button--ghost">Создать аварию</button>
+          </div>
+          <div class="incident-grid">
+            <article class="card">
+              <div class="card__header">
+                <h3>Порыв на магистрали</h3>
+                <span class="status status--alert">Критично</span>
+              </div>
+              <p class="label">Адрес</p>
+              <p>ул. Заводская, 14</p>
+              <p class="label">Ответственный</p>
+              <p>Бригада №3</p>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <h3>Остановка насоса</h3>
+                <span class="status status--warning">В работе</span>
+              </div>
+              <p class="label">Причина</p>
+              <p>Перегрев двигателя</p>
+              <p class="label">Срок</p>
+              <p>До 12.10.2024</p>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <h3>Падение давления</h3>
+                <span class="status status--ok">Закрыто</span>
+              </div>
+              <p class="label">Локация</p>
+              <p>Камера 7</p>
+              <p class="label">Комментарий</p>
+              <p>Заменен датчик давления.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="analytics" class="section section--highlight">
+          <div class="section__header">
+            <div>
+              <h2>Контроль выполнения работ</h2>
+              <p>Сводная информация по статусам, срокам и эффективности.</p>
+            </div>
+          </div>
+          <div class="analytics">
+            <div class="analytics__item">
+              <span class="analytics__value">92%</span>
+              <span>Выполнено в срок</span>
+            </div>
+            <div class="analytics__item">
+              <span class="analytics__value">7</span>
+              <span>Просрочено</span>
+            </div>
+            <div class="analytics__item">
+              <span class="analytics__value">4.2</span>
+              <span>Среднее время закрытия, дни</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
